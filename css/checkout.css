@@ -15,11 +15,11 @@ a {
 
 /* Root CSS */
 
-.sideBar{
+.sideBar {
   display: none;
   z-index: 100;
 }
-.menu_toggle{
+.menu_toggle {
   cursor: pointer;
   display: none;
 }
@@ -117,7 +117,9 @@ nav a {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: green;
+  background-image: url(/assests/user.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 /* Header */
@@ -290,7 +292,7 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  .sideBar{
+  .sideBar {
     position: absolute;
     top: 0;
     left: -100%;
@@ -303,15 +305,14 @@ footer {
     flex-direction: column;
     gap: 15px;
     transition: 250ms all linear;
-    
   }
-  .active_sideBar{
+  .active_sideBar {
     left: 0;
     transition: 250ms all linear;
   }
-  .search_wrapper_mobile{
-      width: 100%;
-      position: relative;
+  .search_wrapper_mobile {
+    width: 100%;
+    position: relative;
   }
   .search_icon_mobile {
     position: absolute;
@@ -321,7 +322,7 @@ footer {
     right: 18px;
     transform: translateY(-50%);
   }
-  .search_mobile{
+  .search_mobile {
     width: 100%;
     border: 1px solid rgb(245, 242, 242);
     background-color: rgb(245, 242, 242);
@@ -330,7 +331,7 @@ footer {
     color: black;
     outline: none;
   }
-  .topBar{
+  .topBar {
     display: flex;
     justify-content: space-between;
   }
@@ -339,11 +340,13 @@ footer {
     flex-direction: column;
     gap: 25px;
   }
-  .user_logo_mobile{
+  .user_logo_mobile {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: green;
+    background-image: url(/assests/user.jpg);
+    background-size: cover;
+    background-position: center;
   }
   .header_cont {
     width: 90%;
@@ -357,7 +360,7 @@ footer {
   .user_logo {
     display: none;
   }
-  .menu_toggle{
+  .menu_toggle {
     display: block;
     font-size: 25px;
   }
