@@ -51,11 +51,11 @@ function ShowProduct() {
       </p>
       <h4 class="subtitle">Product Preview</h4>
       <div class="product_preview">
-         <img  class="small_img active"  src="${data.photos[0]}" alt="">
-         <img  class="small_img" src="${data.photos[1]}" alt="">
-         <img class="small_img" src="${data.photos[2]}" alt="">
-         <img class="small_img" src="${data.photos[3]}" alt="">
-         <img class="small_img" src="${data.photos[4]}" alt="">
+         <img  class="small_img active" onclick="changeActive()" src="${data.photos[0]}" alt="">
+         <img  class="small_img" onclick="changeActive()" src="${data.photos[1]}" alt="">
+         <img class="small_img" onclick="changeActive()" src="${data.photos[2]}" alt="">
+         <img class="small_img" onclick="changeActive()" src="${data.photos[3]}" alt="">
+         <img class="small_img" onclick="changeActive()" src="${data.photos[4]}" alt="">
       </div>
     `
     document.querySelector(".add_to_cart").addEventListener("click" , function(e){
@@ -64,9 +64,25 @@ function ShowProduct() {
       getTotalQty()
   
     })
-    });
+      });
 }
 
+function changeActive(){
+  var smallImg = document.querySelectorAll(".small_img");
+
+  smallImg.forEach((small) =>
+    small.addEventListener("click", function (e) {
+      var fullImg = document.querySelector(".main_img");
+      var newImg = document.querySelectorAll(".small_img");
+      fullImg.src = e.target.src;
+      for (var i = 0; i < newImg.length; i++) {
+        newImg[i].classList.remove("active");
+      }
+      e.target.classList.add("active");
+    })
+  )
+  
+}
 
 function setQty() {
   if ("myList" in sessionStorage) {
